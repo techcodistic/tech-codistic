@@ -1,0 +1,56 @@
+# Root-level common ignores
+node_modules/
+dist/
+build/
+.env
+.env.*  # e.g. .env.production, .env.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE/editor settings
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Logs
+logs
+*.log
+*.tsbuildinfo
+
+# Coverage reports
+coverage/
+.nyc_output/
+lcov-report/
+
+# TypeScript compiled outputs
+*.tsbuildinfo
+*.d.ts
+
+# Backend specific (Node.js)
+backend/node_modules/
+backend/dist/
+backend/.env
+
+# Frontend specific (React + TypeScript)
+frontend/node_modules/
+frontend/build/
+frontend/.env
+frontend/.env.*  # for environment-specific vars like .env.development
+
+# Cache folders
+.cache/
+frontend/.next/  # if using Next.js
+frontend/.turbo/
+frontend/.vite/
+backend/.turbo/
+backend/.vite/
