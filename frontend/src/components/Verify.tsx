@@ -14,7 +14,7 @@ const Verify: React.FC = () => {
     setVerificationStatus(null);
     setShowCertificate(false);
 
-    const imageUrl = `http://localhost:5000/certificates/${studentId}`;
+    const imageUrl = `https://tech-codistic.onrender.com/certificates/${studentId}`;
 
     try {
       const response = await fetch(imageUrl, { method: 'HEAD' });
