@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -13,10 +13,30 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
+
+  useEffect(() => {
+    // Handle scrolling when page loads with hash
+    const hash = window.location.hash;
+
+    if (hash) {
+      const element = document.querySelector(hash);
+
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
+        }, 100);
+      }
+    }
+  }, []);
+
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
         <Header />
+
         <main>
           <Hero />
           <Services />
@@ -28,6 +48,7 @@ function App() {
           <Verify />
           <Contact />
         </main>
+
         <Footer />
       </div>
     </ThemeProvider>
